@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - Connectly</title>
+  <link rel="stylesheet" href="../css/variables.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/post.css" />
+  <link rel="stylesheet" href="../css/profile.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+  <a href="feed.html" class="navbar-logo">✨ Connectly</a>
+
+  <div class="search-wrap">
+    <input type="text" id="searchInput" class="input search-input" placeholder="Search users..." autocomplete="off" />
+    <div class="search-results hidden" id="searchResults"></div>
+  </div>
+
+  <div class="navbar-actions">
+      <a href="feed.html" class="btn btn-secondary">← Feed</a>
+      <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+    </div>
+  </nav>
+
+  <div class="app-layout">
+  <!-- Left Sidebar -->
+  <aside class="sidebar-left">
+    <div class="card mini-profile-card">
+      <div class="avatar avatar-lg" id="sidebarAvatar"></div>
+      <div class="mini-profile-name" id="sidebarName"></div>
+     <div class="mini-profile-username" id="sidebarUsername"></div>
+<div class="mini-profile-stats" id="sidebarStats">
+  <div class="mini-stat"><span class="mini-stat-value" id="statPosts">-</span><span class="mini-stat-label">Posts</span></div>
+  <div class="mini-stat"><span class="mini-stat-value" id="statFollowers">-</span><span class="mini-stat-label">Followers</span></div>
+  <div class="mini-stat"><span class="mini-stat-value" id="statFollowing">-</span><span class="mini-stat-label">Following</span></div>
+</div>
+<a href="feed.html" class="btn btn-secondary btn-block">My Profile</a>
+    <div class="card sidebar-links" style="padding: var(--space-md);">
+      <a href="feed.html" class="sidebar-link">🏠 Home</a>
+      <a href="#" class="sidebar-link" id="sidebarProfileLink">👤 Profile</a>
+    </div>
+  </aside>
+
+  <!-- Center -->
+  <div class="feed-center">
+    <!-- Profile Header -->
+    <div class="card profile-header" id="profileHeaderCard">
+      <p class="text-muted">Loading profile...</p>
+    </div>
+
+    <!-- Posts by this user -->
+    <div id="userPostsContainer"></div>
+  </div>
+
+  <!-- Right Sidebar -->
+  <aside class="sidebar-right">
+    <div class="card suggestions-card">
+      <h3 class="suggestions-title">Suggested for you</h3>
+      <div id="suggestionsList">
+        <p class="text-muted" style="font-size:13px;">Loading...</p>
+      </div>
+    </div>
+  </aside>
+</div>
+
+ <script src="../js/api.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/profile.js"></script>
+</body>
+</html>

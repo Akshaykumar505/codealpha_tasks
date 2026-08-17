@@ -1,0 +1,110 @@
+.board-shell { max-width: 1400px; margin: 0 auto; padding: 1.75rem; }
+.board-head {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+  margin-bottom: 1.5rem; flex-wrap: wrap;
+}
+.board-head-left { display: flex; flex-direction: column; gap: 0.35rem; }
+.board-back {
+  font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--ink-soft); text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;
+}
+.board-back:hover { color: var(--accent); }
+.board-head h1 { font-size: 1.8rem; }
+.board-desc { color: var(--ink-soft); font-size: 0.9rem; max-width: 520px; }
+.board-actions { display: flex; align-items: center; gap: 0.6rem; }
+.board-members { display: flex; }
+.board-members .avatar { margin-left: -8px; border: 2px solid var(--bg); cursor: pointer; }
+.board-members .avatar:first-child { margin-left: 0; }
+
+.board-columns {
+  display: grid; grid-template-columns: repeat(4, minmax(260px, 1fr)); gap: 1rem; align-items: start;
+  overflow-x: auto; padding-bottom: 1rem;
+}
+@media (max-width: 1000px) { .board-columns { grid-template-columns: repeat(4, 82vw); } }
+
+.board-column {
+  background: rgba(255,255,255,0.5); border: 1px solid var(--line); border-radius: 12px; padding: 0.85rem;
+  min-height: 200px; transition: background 0.15s ease, border-color 0.15s ease;
+}
+.board-column.drag-over { background: var(--accent-soft); border-color: var(--accent); }
+.board-column-head {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.85rem;
+  padding: 0 0.2rem;
+}
+.board-column-title {
+  display: flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono);
+  font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;
+}
+.col-dot { width: 8px; height: 8px; border-radius: 50%; }
+.col-dot-todo { background: var(--slate); }
+.col-dot-in_progress { background: var(--amber); }
+.col-dot-done { background: var(--accent); }
+.col-dot-blocked { background: var(--brick); }
+.board-column-count {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+  font-size: 0.68rem; padding: 0.05rem 0.5rem; color: var(--ink-soft); font-family: var(--font-mono);
+}
+.column-add-btn {
+  width: 100%; text-align: left; background: none; border: 1px dashed var(--line-strong);
+  border-radius: 8px; padding: 0.5rem 0.7rem; color: var(--ink-soft); font-size: 0.82rem; margin-top: 0.4rem;
+}
+.column-add-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+.task-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  padding: 0.75rem 0.8rem 0.7rem; margin-bottom: 0.65rem; cursor: grab; position: relative;
+  box-shadow: 0 1px 2px rgba(32,28,22,0.05);
+  border-left: 4px solid var(--line-strong);
+}
+.task-card:active { cursor: grabbing; }
+.task-card.priority-high { border-left-color: var(--brick); }
+.task-card.priority-medium { border-left-color: var(--amber); }
+.task-card.priority-low { border-left-color: var(--slate); }
+.task-card.dragging { opacity: 0.4; }
+.task-card-id {
+  font-family: var(--font-mono); font-size: 0.62rem; color: var(--ink-soft); margin-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+}
+.task-card-title { font-size: 0.92rem; font-weight: 600; line-height: 1.35; margin-bottom: 0.5rem; }
+.task-card-foot { display: flex; align-items: center; justify-content: space-between; }
+.task-card-meta { display: flex; align-items: center; gap: 0.5rem; font-size: 0.72rem; color: var(--ink-soft); }
+.task-card-comments { display: flex; align-items: center; gap: 0.25rem; font-family: var(--font-mono); }
+.task-card-due { font-family: var(--font-mono); }
+.task-card-due.overdue { color: var(--brick); font-weight: 600; }
+
+/* --- task detail modal --- */
+.task-detail-eyebrow {
+  font-family: var(--font-mono); font-size: 0.68rem; color: var(--ink-soft); text-transform: uppercase;
+  letter-spacing: 0.05em; margin-bottom: 0.4rem;
+}
+.task-detail-title {
+  font-size: 1.35rem; width: 100%; border: none; background: transparent; font-family: var(--font-display);
+  font-weight: 600; padding: 0.1rem 0; margin-bottom: 0.9rem;
+}
+.task-detail-title:focus { outline: none; border-bottom: 2px solid var(--accent); }
+.task-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1.1rem; }
+.task-detail-desc {
+  width: 100%; border: 1px solid var(--line); border-radius: 8px; padding: 0.6rem 0.7rem;
+  font-family: var(--font-body); font-size: 0.88rem; min-height: 70px; margin-bottom: 1.2rem; color: var(--ink);
+}
+.task-detail-desc:focus { border-color: var(--accent); outline: none; }
+.task-detail-section-title {
+  font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em;
+  color: var(--ink-soft); margin-bottom: 0.6rem; display: flex; align-items: center; justify-content: space-between;
+}
+.task-detail-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+
+.comment-list { display: flex; flex-direction: column; gap: 0.85rem; max-height: 260px; overflow-y: auto; margin-bottom: 0.9rem; padding-right: 0.3rem; }
+.comment-item { display: flex; gap: 0.6rem; }
+.comment-bubble { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 0.55rem 0.75rem; flex: 1; }
+.comment-head { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.15rem; }
+.comment-author { font-weight: 600; font-size: 0.8rem; }
+.comment-time { font-family: var(--font-mono); font-size: 0.64rem; color: var(--ink-soft); }
+.comment-content { font-size: 0.86rem; line-height: 1.5; white-space: pre-wrap; }
+.comment-form { display: flex; gap: 0.5rem; align-items: flex-end; }
+.comment-form textarea {
+  flex: 1; border: 1px solid var(--line-strong); border-radius: 8px; padding: 0.55rem 0.7rem;
+  font-family: var(--font-body); font-size: 0.86rem; min-height: 42px; max-height: 120px;
+}
+.comment-form textarea:focus { border-color: var(--accent); outline: none; }
+.typing-hint { font-size: 0.72rem; color: var(--ink-soft); font-style: italic; margin: -0.3rem 0 0.6rem; }

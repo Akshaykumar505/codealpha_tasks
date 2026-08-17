@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+db/flowdesk.sqlite
+db/flowdesk.sqlite-shm
+db/flowdesk.sqlite-wal
+*.log

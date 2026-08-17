@@ -1,0 +1,41 @@
+.page-shell { max-width: 1080px; margin: 0 auto; padding: 2.5rem 1.75rem 4rem; }
+.page-head {
+  display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2rem; gap: 1rem;
+  flex-wrap: wrap;
+}
+.page-eyebrow {
+  font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-soft); margin-bottom: 0.4rem;
+}
+.page-head h1 { font-size: 2.1rem; }
+
+.project-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.1rem;
+}
+.project-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1.3rem; text-decoration: none; color: var(--ink); box-shadow: var(--shadow);
+  display: flex; flex-direction: column; gap: 0.8rem; transition: transform 0.12s ease, border-color 0.12s ease;
+  position: relative; overflow: hidden;
+}
+.project-card::before {
+  content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--accent);
+}
+.project-card:hover { transform: translateY(-2px); border-color: var(--line-strong); }
+.project-card h3 { font-size: 1.15rem; }
+.project-card-desc { font-size: 0.85rem; color: var(--ink-soft); line-height: 1.5; min-height: 1.2em; }
+.project-card-foot {
+  margin-top: auto; display: flex; align-items: center; justify-content: space-between;
+  padding-top: 0.7rem; border-top: 1px solid var(--line);
+}
+.project-stats { display: flex; gap: 0.6rem; font-family: var(--font-mono); font-size: 0.72rem; color: var(--ink-soft); }
+.project-avatars { display: flex; }
+.project-avatars .avatar { margin-left: -8px; border: 2px solid var(--surface); }
+.project-avatars .avatar:first-child { margin-left: 0; }
+
+.empty-state {
+  border: 1px dashed var(--line-strong); border-radius: 14px; padding: 3.5rem 2rem; text-align: center;
+  color: var(--ink-soft);
+}
+.empty-state h3 { color: var(--ink); margin-bottom: 0.5rem; font-size: 1.2rem; }
+.empty-state p { max-width: 340px; margin: 0 auto 1.25rem; font-size: 0.9rem; line-height: 1.5; }

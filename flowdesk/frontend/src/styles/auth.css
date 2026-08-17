@@ -1,0 +1,94 @@
+.auth-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+}
+@media (max-width: 860px) {
+  .auth-shell { grid-template-columns: 1fr; }
+  .auth-side { display: none; }
+}
+
+.auth-side {
+  background: var(--ink);
+  color: var(--bg);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+.auth-side::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    transparent, transparent 39px, rgba(243,241,234,0.06) 40px
+  );
+  pointer-events: none;
+}
+.auth-side-mark {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A9B8B0;
+}
+.auth-side h1 {
+  font-size: 2.6rem;
+  line-height: 1.15;
+  max-width: 420px;
+  margin-top: 1.5rem;
+}
+.auth-side p {
+  color: #C7CFC7;
+  max-width: 380px;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+.auth-ledger {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #8C978F;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.auth-ledger span { color: var(--bg); }
+
+.auth-form-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.auth-form {
+  width: 100%;
+  max-width: 380px;
+}
+.auth-form-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.6rem;
+}
+.auth-form h2 {
+  font-size: 1.9rem;
+  margin-bottom: 0.4rem;
+}
+.auth-form-sub {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  margin-bottom: 1.75rem;
+}
+.auth-form .btn { width: 100%; padding: 0.7rem; margin-top: 0.3rem; }
+.auth-switch {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-align: center;
+}
+.auth-switch a { color: var(--accent); font-weight: 600; text-decoration: none; }
+.auth-switch a:hover { text-decoration: underline; }

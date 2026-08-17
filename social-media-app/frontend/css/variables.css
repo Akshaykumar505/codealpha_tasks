@@ -1,0 +1,46 @@
+:root {
+  /* Background colors - deep navy/plum theme */
+  --bg-primary: #16162a;
+  --bg-secondary: #1e1e38;
+  --bg-card: #24243f;
+  --bg-hover: #2c2c4d;
+
+  /* Accent gradient - coral to violet */
+  --accent-coral: #ff6b6b;
+  --accent-violet: #7c5cff;
+  --accent-teal: #4ecdc4;
+  --gradient-primary: linear-gradient(135deg, #ff6b6b 0%, #7c5cff 100%);
+
+  /* Text colors */
+  --text-primary: #f5f3ff;
+  --text-secondary: #a8a5c0;
+  --text-muted: #6b6885;
+
+  /* Borders */
+  --border-color: #35355a;
+
+  /* Status colors */
+  --color-danger: #ff5c5c;
+  --color-success: #4ecdc4;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+  /* Fonts */
+  --font-heading: 'Sora', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Shadows */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 24px rgba(124, 92, 255, 0.25);
+}

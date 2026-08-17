@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feed - Connectly</title>
+  <link rel="stylesheet" href="../css/variables.css" />
+<link rel="stylesheet" href="../css/base.css" />
+<link rel="stylesheet" href="../css/components.css" />
+<link rel="stylesheet" href="../css/layout.css" />
+<link rel="stylesheet" href="../css/post.css" />
+<link rel="stylesheet" href="../css/notifications.css" />
+<link rel="stylesheet" href="../css/profile.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+  <span class="navbar-logo">✨ Connectly</span>
+
+  <div class="search-wrap">
+    <input type="text" id="searchInput" class="input search-input" placeholder="Search users..." autocomplete="off" />
+    <div class="search-results hidden" id="searchResults"></div>
+  </div>
+
+  <div class="navbar-actions">
+  <div class="notif-bell-wrap">
+    <button class="notif-bell-btn" id="notifBellBtn">
+      🔔
+      <span class="notif-badge hidden" id="notifBadge">0</span>
+    </button>
+    <div class="notif-dropdown hidden" id="notifDropdown">
+      <div class="notif-dropdown-header">Notifications</div>
+      <div id="notifList"></div>
+    </div>
+  </div>
+
+  <div class="navbar-user" id="navbarUser">
+    <div class="avatar avatar-sm" id="navAvatar"></div>
+    <span class="navbar-username" id="navUsername"></span>
+  </div>
+  <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+</div>
+  </nav>
+
+  <div class="app-layout">
+  <!-- Left Sidebar -->
+  <aside class="sidebar-left">
+    <div class="card mini-profile-card">
+      <div class="avatar avatar-lg" id="sidebarAvatar"></div>
+      <div class="mini-profile-name" id="sidebarName"></div>
+     <div class="mini-profile-username" id="sidebarUsername"></div>
+<div class="mini-profile-stats" id="sidebarStats">
+  <div class="mini-stat"><span class="mini-stat-value" id="statPosts">-</span><span class="mini-stat-label">Posts</span></div>
+  <div class="mini-stat"><span class="mini-stat-value" id="statFollowers">-</span><span class="mini-stat-label">Followers</span></div>
+  <div class="mini-stat"><span class="mini-stat-value" id="statFollowing">-</span><span class="mini-stat-label">Following</span></div>
+</div>
+<a href="feed.html" class="btn btn-secondary btn-block">My Profile</a>
+    <div class="card sidebar-links" style="padding: var(--space-md);">
+      <a href="feed.html" class="sidebar-link">🏠 Home</a>
+      <a href="#" class="sidebar-link" id="sidebarProfileLink">👤 Profile</a>
+    </div>
+  </aside>
+
+  <!-- Center Feed -->
+  <div class="feed-center">
+    <!-- Create Post Box -->
+    <div class="card create-post-box">
+      <div class="create-post-header">
+        <div class="avatar avatar-md" id="createPostAvatar"></div>
+        <div class="create-post-input">
+          <textarea id="postContent" class="input" placeholder="What's on your mind?" rows="3"></textarea>
+        </div>
+      </div>
+
+      <div id="imagePreviewWrap" class="image-preview-wrap hidden">
+        <img id="imagePreview" src="" alt="Preview" />
+        <button class="remove-image-btn" id="removeImageBtn">✕</button>
+      </div>
+
+      <div class="create-post-footer">
+        <label class="file-input-label">
+          📷 Add Photo
+          <input type="file" id="postImageInput" accept="image/*" class="hidden" />
+        </label>
+        <button class="btn btn-primary" id="submitPostBtn">Post</button>
+      </div>
+    </div>
+
+    <!-- Posts Feed -->
+    <div id="feedContainer">
+      <p class="text-muted" id="loadingText">Loading posts...</p>
+    </div>
+  </div>
+
+  <!-- Right Sidebar -->
+  <aside class="sidebar-right">
+    <div class="card suggestions-card">
+      <h3 class="suggestions-title">Suggested for you</h3>
+      <div id="suggestionsList">
+        <p class="text-muted" style="font-size:13px;">Loading...</p>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/notifications.js"></script>
+<script src="../js/feed.js"></script>
+</body>
+</html>

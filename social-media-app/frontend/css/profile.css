@@ -1,0 +1,78 @@
+.profile-header {
+  padding: var(--space-xl);
+  margin-bottom: var(--space-lg);
+}
+
+.profile-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+.profile-username {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: var(--space-sm);
+}
+
+.profile-bio {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: var(--space-md);
+}
+
+.profile-stats {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.profile-stat-value {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.profile-stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.edit-profile-form {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-color);
+}
+
+.edit-profile-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.profile-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: var(--space-lg);
+}
+
+.profile-tab {
+  flex: 1;
+  text-align: center;
+  padding: var(--space-md);
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 2px solid transparent;
+}
+
+.profile-tab.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--accent-violet);
+}
